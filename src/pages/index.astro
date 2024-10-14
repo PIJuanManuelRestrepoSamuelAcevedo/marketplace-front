@@ -1,29 +1,43 @@
 ---
-import Layout from "../layouts/Layout.astro";
 import Card from "../components/Card.astro";
+
+let dummy = { tokensMonth: 2, avgPrice: 10000, energySource: "Solar" };
+let dummy2 = {
+  tokensMonth: 102,
+  avgPrice: 51000,
+  energySource: "Hydroelectric",
+};
 ---
 
-<div class="h-screen p-2">
-  <nav class="flex justify-between w-screen h-10 bg-lime-300">
+<div class="h-screen">
+  <nav class="flex justify-around items-center w-screen h-10 bg-[#63e9a680]">
     <div class="flex">
       <!-- <img alt="PI-logo" src="/public/logo_token.png" /> -->
       <span class="ml-2">Energia transactiva exchange PI</span>
     </div>
-
+    <a href="/comprar" class="text-l">Comprar tokens</a>
     <!--?xml version="1.0"?-->
-    <svg viewBox="0 0 120 120" version="1.1" xmlns="http://www.w3.org/2000/svg">
-      <circle cx="60" cy="60" r="50"></circle>
-    </svg>
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="1.2rem"
+      height="1.2rem"
+      viewBox="0 0 24 24"
+      ><path
+        fill="currentColor"
+        fill-rule="evenodd"
+        d="M8 7a4 4 0 1 1 8 0a4 4 0 0 1-8 0m0 6a5 5 0 0 0-5 5a3 3 0 0 0 3 3h12a3 3 0 0 0 3-3a5 5 0 0 0-5-5z"
+        clip-rule="evenodd"></path></svg
+    >
   </nav>
   <!--A modo de resumen y/o presentación de la página -->
-  <div class="flex flex-col md:flex-row">
+  <div class="flex flex-col md:flex-row p-1">
     <!--Not working responsive -->
-    <div class="bg-[#f0e5d8]">
+    <div class="max-w-2/3 m-2">
       <!--El color está a prueba, aún me falta definir una paleta adecuada -->
-      <span class="text-xl font-bold text-gray-800 mb-4">
+      <h2 class="text-xl font-bold mb-4">
         La energia transactiva en colombia como un marco de posibilidades
         sostenible
-      </span>
+      </h2>
       <p>
         La energia transactiva es un concepto novedoso que busca proporcionar un
         medio para diversificar y descentralizar las redes electricas en todo el
@@ -43,7 +57,7 @@ import Card from "../components/Card.astro";
       </p>
       <br />
       Para lograr esto es fundamental:
-      <ol role="list" class="marker:text-sky-400 list-disc pl-5 space-y-3">
+      <ol role="list" class="list-disc pl-5 space-y-3">
         <li>
           Permitir mediante una interfaz de salida que los usuarios de la red
           aporten a la misma y se conviertan en nodos generadores.
@@ -70,42 +84,26 @@ import Card from "../components/Card.astro";
         se realiza unicamente a modo de piloto.
       </p>
     </div>
+    <div class="max-w-1/3 self-center">
+      <img
+        src="https://www.ceupe.com.ve/images/easyblog_articles/205/b2ap3_large_Tipo.jpg"
+      />
+    </div>
   </div>
   <!--<div>CARRUSEL DE IMAGENES O VENDEDORES DESTACADOS</div> -->
-
-  <span> Vendedores destacados de los ultimos seis meses! </span>
+  <br />
+  <p class="text-center">Vendedores destacados de los ultimos seis meses!</p>
 
   <!-- Tabla con los vendedores principales -->
-  <div class="grid grid-cols-2 gap-2 p-2">
-    <div class="bg-orange-200">
-      <ul>
-        <li>Username: Samuel Acevedo</li>
-        <li>Average of Tokens sold per month: 50EPMT(inventado)</li>
-        <li>Average price: 500000 COP</li>
-        <li>Main energy source: Solar</li>
-        <li>etc</li>
-      </ul>
-    </div>
-    <div class="bg-orange-200">
-      <ul>
-        <li>Username: JuanM</li>
-        <li>Average of Tokens sold per month: 100EPMT(inventado)</li>
-        <li>Average price: 380000 COP</li>
-        <li>Main energy source: Wind</li>
-        <li>etc</li>
-      </ul>
-    </div>
-    <div class="bg-orange-200">
-      <ul>
-        <li>Username: DiegoB-UdeA</li>
-        <li>Average of Tokens sold per month: 10EPMT(inventado)</li>
-        <li>Average price: 100000 COP</li>
-        <li>Main energy source: Solar</li>
-        <li>etc</li>
-      </ul>
-    </div>
+  <div class="grid grid-cols-3 gap-2 p-2">
+    <Card title="JuanM-UdeA" body={dummy} href="/" />
+    <Card title="comprador" body={dummy2} href="/" />
+    <Card title="DieboB-UdeA" body={dummy} href="/" />
+    <Card title="comprador" body={dummy2} href="/" />
+    <Card title="Samuel-UdeA" body={dummy} href="/" />
+    <Card title="comprador" body={dummy2} href="/" />
   </div>
-  <footer class="bottom-0 w-screen h-10 text-center">
+  <footer class="bottom-0 w-screen h-10 text-center bg-[#63e9a680]">
     All rights reserved. 2024.
   </footer>
 
