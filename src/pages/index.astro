@@ -1,34 +1,9 @@
 ---
-import Card from "../components/Card.astro";
-
-let dummy = { tokensMonth: 2, avgPrice: 10000, energySource: "Solar" };
-let dummy2 = {
-  tokensMonth: 102,
-  avgPrice: 51000,
-  energySource: "Hydroelectric",
-};
+import OfferPanel from "../components/OfferPanel";
+import Layout from "../layouts/Layout.astro";
 ---
 
-<div class="h-screen">
-  <nav class="flex justify-around items-center w-screen h-10 bg-[#63e9a680]">
-    <div class="flex">
-      <!-- <img alt="PI-logo" src="/public/logo_token.png" /> -->
-      <span class="ml-2">Energia transactiva exchange PI</span>
-    </div>
-    <a href="/comprar" class="text-l">Comprar tokens</a>
-    <!--?xml version="1.0"?-->
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      width="1.2rem"
-      height="1.2rem"
-      viewBox="0 0 24 24"
-      ><path
-        fill="currentColor"
-        fill-rule="evenodd"
-        d="M8 7a4 4 0 1 1 8 0a4 4 0 0 1-8 0m0 6a5 5 0 0 0-5 5a3 3 0 0 0 3 3h12a3 3 0 0 0 3-3a5 5 0 0 0-5-5z"
-        clip-rule="evenodd"></path></svg
-    >
-  </nav>
+<Layout title="Home">
   <!--A modo de resumen y/o presentación de la página -->
   <div class="flex flex-col md:flex-row p-1">
     <!--Not working responsive -->
@@ -92,80 +67,10 @@ let dummy2 = {
   </div>
   <!--<div>CARRUSEL DE IMAGENES O VENDEDORES DESTACADOS</div> -->
   <br />
-  <p class="text-center">Vendedores destacados de los ultimos seis meses!</p>
+  <p class="text-center border-t-4 pt-4">
+    Vendedores destacados de los ultimos seis meses!
+  </p>
 
   <!-- Tabla con los vendedores principales -->
-  <div class="grid grid-cols-3 gap-2 p-2">
-    <Card title="JuanM-UdeA" body={dummy} href="/" />
-    <Card title="comprador" body={dummy2} href="/" />
-    <Card title="DieboB-UdeA" body={dummy} href="/" />
-    <Card title="comprador" body={dummy2} href="/" />
-    <Card title="Samuel-UdeA" body={dummy} href="/" />
-    <Card title="comprador" body={dummy2} href="/" />
-  </div>
-  <footer class="bottom-0 w-screen h-10 text-center bg-[#63e9a680]">
-    All rights reserved. 2024.
-  </footer>
-
-  <style>
-    main {
-      margin: auto;
-      padding: 1rem;
-      width: 800px;
-      max-width: calc(100% - 2rem);
-      color: white;
-      font-size: 20px;
-      line-height: 1.6;
-    }
-    .astro-a {
-      position: absolute;
-      top: -32px;
-      left: 50%;
-      transform: translatex(-50%);
-      width: 220px;
-      height: auto;
-      z-index: -1;
-    }
-    h1 {
-      font-size: 4rem;
-      font-weight: 700;
-      line-height: 1;
-      text-align: center;
-      margin-bottom: 1em;
-    }
-    .text-gradient {
-      background-image: var(--accent-gradient);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-size: 400%;
-      background-position: 0%;
-    }
-    .instructions {
-      margin-bottom: 2rem;
-      border: 1px solid rgba(var(--accent-light), 25%);
-      background: linear-gradient(
-        rgba(var(--accent-dark), 66%),
-        rgba(var(--accent-dark), 33%)
-      );
-      padding: 1.5rem;
-      border-radius: 8px;
-    }
-    .instructions code {
-      font-size: 0.8em;
-      font-weight: bold;
-      background: rgba(var(--accent-light), 12%);
-      color: rgb(var(--accent-light));
-      border-radius: 4px;
-      padding: 0.3em 0.4em;
-    }
-    .instructions strong {
-      color: rgb(var(--accent-light));
-    }
-    .link-card-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
-      gap: 2rem;
-      padding: 0;
-    }
-  </style>
-</div>
+  <OfferPanel />
+</Layout>

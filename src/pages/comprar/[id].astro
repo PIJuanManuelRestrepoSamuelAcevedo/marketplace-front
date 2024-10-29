@@ -1,0 +1,41 @@
+---
+import Layout from "../../layouts/Layout.astro";
+
+const oferta = {
+  offerId: 102,
+  userAddress: "0x23904sdjklr2390jf",
+  ownerUsername: "ABC2",
+  kwhQuantity: 10,
+  price: 120000,
+  kwhUnitPrice: 12000,
+};
+
+const { resource, id } = Astro.params;
+---
+
+<Layout title="comprar">
+  <div class="flex flex-col md:flex-row justify-around items-center h-screen">
+    <section
+      class="w-5/6 md:w-2/5 h-1/3 md:h-2/3 p-4 border-4 border-[#63e963] shadow-inner shadow-green-500"
+    >
+      <h2 class="font-bold">Oferta número: {oferta.offerId}</h2>
+      <p>User address of seller: {oferta.userAddress}</p>
+      <p>Username of owner: {oferta.ownerUsername}</p>
+      <p>Cantidad kilowatts/hora: {oferta.kwhQuantity}</p>
+      <p>Precio por kwh: {oferta.kwhUnitPrice}</p>
+      <p>Precio total: {oferta.price}</p>
+    </section>
+    <main
+      class="flex flex-col w-5/6 md:w-1/4 h-1/3 md:h-2/3 p-4 border-4 border-cyan-600"
+    >
+      Menu para comprar
+
+      <label for="buyer-wallet">Ingrese la dirección de su wallet: </label>
+      <input class="outline" name="buyer-wallet" id="buyer-wallet" />
+      <button
+        class="outline outline-blue-500/50 hover:bg-cyan-300/30 hover:outline-offset-2 delay-100"
+        >Comprar</button
+      >
+    </main>
+  </div>
+</Layout>
