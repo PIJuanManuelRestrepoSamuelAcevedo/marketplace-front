@@ -1,6 +1,19 @@
 ---
 import OfferPanel from "../components/OfferPanel";
 import Layout from "../layouts/Layout.astro";
+
+/* 
+
+Login: 
+
+POST:
+{
+  username: string;
+  password: string;
+}
+
+
+*/
 ---
 
 <Layout title="Home">
@@ -67,9 +80,7 @@ import Layout from "../layouts/Layout.astro";
   </div>
   <!--<div>CARRUSEL DE IMAGENES O VENDEDORES DESTACADOS</div> -->
   <br />
-  <p class="text-center border-t-4 pt-4">
-    Vendedores destacados de los ultimos seis meses!
-  </p>
+  <h2 class="text-center font-bold border-t-4 pt-4">Ofertas disponibles</h2>
 
   <!-- Tabla con los vendedores principales -->
   <OfferPanel />

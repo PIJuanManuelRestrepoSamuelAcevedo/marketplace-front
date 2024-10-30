@@ -4,10 +4,9 @@ import Card from "./Card";
 const OfferPanel = () => {
 
 
-    let dummy = { tokensMonth: 2, avgPrice: 10000, energySource: "Solar" };
+    let dummy = { tokensMonth: 2, energySource: "Solar" };
     let dummy2 = {
     tokensMonth: 102,
-    avgPrice: 51000,
     energySource: "Hydroelectric",
     };
 

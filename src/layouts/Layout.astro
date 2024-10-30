@@ -17,7 +17,9 @@ const { title } = Astro.props;
     <title>{title}</title>
   </head>
   <body>
-    <nav class="flex justify-around items-center w-screen h-10 bg-[#63e9a680]">
+    <nav
+      class="flex justify-around items-center w-screen h-10 bg-[#63e9a680] border-b-2 border-black"
+    >
       <div class="flex">
         <!-- <img alt="PI-logo" src="/public/logo_token.png" /> -->
         <a href="/"><span class="ml-2">Energia transactiva exchange PI</span></a
@@ -25,20 +27,29 @@ const { title } = Astro.props;
       </div>
       <!-- <a href="/comprar" class="text-l">Comprar tokens</a> -->
       <!--?xml version="1.0"?-->
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        width="1.2rem"
-        height="1.2rem"
-        viewBox="0 0 24 24"
-        ><path
-          fill="currentColor"
-          fill-rule="evenodd"
-          d="M8 7a4 4 0 1 1 8 0a4 4 0 0 1-8 0m0 6a5 5 0 0 0-5 5a3 3 0 0 0 3 3h12a3 3 0 0 0 3-3a5 5 0 0 0-5-5z"
-          clip-rule="evenodd"></path></svg
-      >
+
+      <a href="/login">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="1.2rem"
+          height="1.2rem"
+          viewBox="0 0 24 24"
+          ><path
+            fill="currentColor"
+            fill-rule="evenodd"
+            d="M8 7a4 4 0 1 1 8 0a4 4 0 0 1-8 0m0 6a5 5 0 0 0-5 5a3 3 0 0 0 3 3h12a3 3 0 0 0 3-3a5 5 0 0 0-5-5z"
+            clip-rule="evenodd"></path></svg
+        >
+      </a>
+
+      {/*Página de registro también */}
+
+      {/* Todo lo que se llamaba address, será wallet*/}
     </nav>
     <slot />
-    <footer class="bottom-0 w-screen h-10 text-center bg-[#63e9a680]">
+    <footer
+      class="bottom-0 w-screen h-10 text-center bg-[#63e9a680] border-t-2 border-black"
+    >
       All rights reserved. 2024.
     </footer>
   </body>

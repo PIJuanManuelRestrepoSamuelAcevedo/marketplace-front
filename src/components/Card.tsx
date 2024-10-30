@@ -2,7 +2,6 @@ import "./Card.css";
 
 interface BuyerInfo {
   tokensMonth: number;
-  avgPrice: number;
   energySource: string;
 }
 
@@ -20,8 +19,6 @@ const Card = ({ title, body, href }) => {
           <h2>{title}</h2>
           <p>
             Average of tokens: {body.tokensMonth} EPMT
-            <br />
-            Average price: {body.avgPrice} COP
             <br />
             Main source of energy: {body.energySource}
           </p>
