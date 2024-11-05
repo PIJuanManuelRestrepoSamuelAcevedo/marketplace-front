@@ -3,5 +3,38 @@ import Layout from "../../layouts/Layout.astro";
 ---
 
 <Layout title="register">
-  <div>REgistro</div>
+  <div class="flex flex-col justify-center items-center h-screen">
+    <h1 class="w-1/3 text-lg">Registro</h1>
+    <main class="w-1/3 h-1/3 p-2 bg-green-200 border-2 border-black h-fit">
+      <form class="flex flex-col">
+        <label for="user">Username: </label><input
+          class="border-2"
+          name="user"
+          id="user"
+        />
+        <label for="wallet-address">Wallet address: </label><input
+          class="border-2"
+          name="wallet-address"
+          id="wallet-address"
+        />
+        <label for="password">Contraseña: </label><input
+          type="password"
+          class="border-2"
+          name="password"
+          id="password"
+        />
+        <label for="password-confirmation">Repita contraseña:</label><input
+          type="password"
+          class="border-2"
+          name="password-confirmation"
+          id="password-confirmation"
+        />
+        <a href="/login" class="text-cyan-500">Login</a>
+        {
+          /* Podemos poner que cuando se haga registro se redireccione hacia el login */
+        }
+        <button class="p-2 bg-gray-300" type="submit">Register</button>
+      </form>
+    </main>
+  </div>
 </Layout>
