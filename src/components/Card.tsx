@@ -1,30 +1,32 @@
 import "./Card.css";
 
-interface BuyerInfo {
-  tokensMonth: number;
+interface OfferInfo {
+  offerId: number;
+  ownerUsername: string;
   energySource: string;
+  kwhQuantity: number;
+  price: number;
 }
 
 interface Props {
-  title: string;
-  body: BuyerInfo;
+  body: OfferInfo;
   href: string;
 }
 
-const Card = ({ title, body, href }) => {
+const Card = ({ body, href }: Props) => {
   return (
-    <>
-      <li className="link-card">
-        <a href={href}>
-          <h2>{title}</h2>
-          <p>
-            Average of tokens: {body.tokensMonth} EPMT
-            <br />
-            Main source of energy: {body.energySource}
-          </p>
-        </a>
-      </li>
-    </>
+    <li className="link-card">
+      <a href={href}>
+        <h2>{body.ownerUsername}</h2>
+        <p>
+          Kwh Quantity: {body.kwhQuantity}
+          <br />
+          Price: {body.price} EPMT
+          <br />
+          Main source of energy: {body.energySource}
+        </p>
+      </a>
+    </li>
   );
 };
 
