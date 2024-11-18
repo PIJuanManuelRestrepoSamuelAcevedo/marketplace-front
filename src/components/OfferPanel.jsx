@@ -1,6 +1,6 @@
 import Card from "./Card";
 
-  const base_url = import.meta.env.PUBLIC_TRANSACTION_API;
+  //const base_url = import.meta.env.PUBLIC_TRANSACTION_API;
   const offer_url = "https://transaccional-api.onrender.com" + "/offers/get-offers";
   // Maybe use state for this one. At the time i am just visualizing the fetch.
   const response = await fetch(offer_url)

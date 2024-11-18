@@ -33,8 +33,17 @@ import Layout from "../../layouts/Layout.astro";
         {
           /* Podemos poner que cuando se haga registro se redireccione hacia el login */
         }
-        <button class="p-2 bg-gray-300" type="submit">Register</button>
+        <button class="p-2 bg-gray-300" id="register-button" type="submit"
+          >Register</button
+        >
       </form>
     </main>
   </div>
 </Layout>
+
+<script>
+  const registerUserInfo = () => {};
+  document
+    .getElementById("register-button")
+    .addEventListener("click", registerUserInfo);
+</script>
