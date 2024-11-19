@@ -1,18 +1,6 @@
 ---
 import OfferPanel from "../components/OfferPanel";
 import Layout from "../layouts/Layout.astro";
-
-/* 
-
-Login: 
-
-POST:
-{
-  username: string;
-  password: string;
-}
-
-*/
 ---
 
 <Layout title="Home">
@@ -82,5 +70,5 @@ POST:
   <h2 class="text-center font-bold border-t-4 pt-4">Ofertas disponibles</h2>
 
   <!-- Tabla con los vendedores principales -->
-  <OfferPanel client:load />
+  <OfferPanel client:only="react" />
 </Layout>
